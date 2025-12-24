@@ -1,0 +1,44 @@
+{
+  "college": "sfcollege",
+  "instructor": "dan-sullivan",
+  "courseNumber": "cis 4083",
+  "courseTitle": "Introduction to Cloud Computing",
+  "units": 3,
+  "coverImage": "/images/Cloud2.jpg",
+  "description": [
+    "This course is an introduction to cloud computing.",
+    "Students will learn about the different types of cloud computing, the benefits of cloud computing, and the different cloud service providers.",
+    "Students will also learn how to create and manage virtual machines in the cloud, how to create and manage storage in the cloud, and how to create and manage databases in the cloud.",
+    "The course will also cover the different cloud computing models, such as Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS)."
+  ],
+  "prerequisites": "CNT 4502 with a grade of C or better",
+  "defaultSection": "sp2026",
+  "contact": {
+    "officeHours": {
+      "location": "Remote",
+      "schedule": "weekly Wed 12:00P - 2:00P EST",
+      "label": "Wed 12P - 2P EST",
+      "zoomLink": "https://sfcollege.zoom.us/j/92446820828?pwd=NHNrYlNaZTBwUXk3Zy9BWnEzYzEydz09"
+    },
+    "discordLink": {
+      "label": "Discord: Code Bytes",
+      "url": "https://discord.gg/MpHjV4qgxZ"
+    },
+    "about": "preferred method of contact is via email. I will respond to emails within 24 hours on weekdays. Published office hours are times when I will be available on Zoom for real-time communication. If you need to meet at a different time, please email me to schedule an appointment.\nDiscord channels are also available for anytime communication with me and your classmates."
+  },
+  "outcomes": "outcomes/clo.json",
+  "objectives": "outcomes/slo.json",
+  "textbook": "materials/textbook.json",
+  "templates": {
+    "syllabus": "core:syllabus",
+    "syllabus(override)": "syllabus/syllabus.html",
+    "policies": "policies/policies.html"
+  },
+  "materials": {
+    "required": "materials/required.html",
+    "recommended": "materials/recommended.html"
+  },
+  "gradingDetails": "grading/grading-details.html",
+  "accommodations": "accommodations/accommodations.html",
+  "topicOutline": "outline/outline.html"
+}

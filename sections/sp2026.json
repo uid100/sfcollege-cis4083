@@ -1,0 +1,32 @@
+{ 
+  "canvas": {
+    "server": "https://courses.sfcollege.edu/",
+    "coursePath": "/courses/501032"
+  },
+  "sectionNumber": "CIS4083_0M1_W26",
+  "courseId": "CIS4083_0M1_W26",
+  "term": "Spring 2026",
+  "dates": {
+    "start": "2026-01-07",
+    "end": "2026-05-01",
+    "withdraw": "2026-03-25",
+    "classesEnd": "2026-04-25",
+    "finals": "2026-04-27",
+    "finalsEnd": "2026-05-02",
+    "gradesDue": "2026-05-04",
+    "gradesPosted": "2026-05-05",
+    "holidays": {
+      "mlkDay": "2026-01-19",
+      "springBreak": {
+        "start": "2026-03-16",
+        "end": "2026-03-21"
+      },
+      "memorialDay": "2026-05-25"
+    }
+  },
+  "schedule": {
+    "day": "",
+    "time": "",
+    "location": "Web. Online Course."
+  }
+}
