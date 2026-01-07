@@ -1,5 +1,5 @@
 [
   { "id": "CLO #1", "outcome": "Explain basic cloud computing concepts, including what the cloud is and the differences between IaaS, PaaS, and SaaS." },
   { "id": "CLO #2", "outcome": "Describe the architecture and components of cloud computing systems." },
-  { "id": "CLO #3", "outcome": "Demonstrate the ability to use cloud services and platforms for deploying and managing applications." },
+  { "id": "CLO #3", "outcome": "Demonstrate the ability to use cloud services and platforms for deploying and managing applications." }
 ]
