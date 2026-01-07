@@ -44,7 +44,7 @@
           "the-cloud": { "title": "What is the Cloud?", "type": "content", "source": "content/01-the-cloud.html" },
           "ack": { "title": "Acknowledgement", "type": "quiz", "source": "content/01-syllabus-acknowledgement.html" },
           "intro": { "title": "About me", "type": "discussion", "source": "content/01-intro.html" },
-          "end": { "title": "End of Module 1: The Cloud, Architecture, and Context", "type": "content", "source": "content/end-module.html"}
+          "end": { "title": "End Module 1: The Cloud, Architecture, and Context", "type": "content", "source": "content/end-module.html"}
         }
       },
       "02-services": {
