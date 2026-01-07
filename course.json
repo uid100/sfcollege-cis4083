@@ -120,6 +120,7 @@
         }
       },
       "99-resources": {}
+    }
   },
   "templates": {
     "syllabus": "core:syllabus",
