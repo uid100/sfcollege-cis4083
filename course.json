@@ -122,8 +122,19 @@
       "99-resources": {
         "title": "Module 99 - Additional Resources",
         "pages": {
-          "late-policy": { "title": "Late Policy", "type": "page", "resource": "https://uid100.github.io/edu-core/shared/policies/late-policy.html" },
-          "online": { "title": "Online Classes", "type": "page", "resource": "https://uid100.github.io/edu-core/shared/policies/online-classes.html" }
+          "late-policy": { 
+            "title": "Late Policy", 
+            "type": "page", 
+            "resource": "https://uid100.github.io/edu-core/shared/policies/late-policy.html",
+            "usage": "https://uid100.github.io/edu-core/templates/topic.html?course=sfcollege-cis4083&module=99-resources&page=late-policy"
+          },
+          "online": { 
+            "title": "Online Classes", 
+            "type": "page", 
+            "resource": 
+            "https://uid100.github.io/edu-core/shared/policies/online-classes.html",
+            "usage": "https://uid100.github.io/edu-core/templates/topic.html?course=sfcollege-cis4083&module=99-resources&page=online"
+          }
         }
       }
     }
