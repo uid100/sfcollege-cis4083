@@ -4,7 +4,7 @@
   "courseNumber": "CIS 4083",
   "courseTitle": "Introduction to Cloud Computing",
   "units": 3,
-  "coverImage": "/images/Cloud2.jpg",
+  "coverImage": "/images/cloud.png",
   "description": [
     "This course is an introduction to cloud computing.",
     "Students will learn about the different types of cloud computing, the benefits of cloud computing, and the different cloud service providers.",
@@ -29,6 +29,98 @@
   "outcomes": "outcomes/clo.json",
   "objectives": "outcomes/slo.json",
   "textbook": "materials/textbook.json",
+  "content": {
+    "modules": {
+      "00-implementation-notes": {
+        "title": "Module 00 - notes only",
+        "pages": {
+          "implementation-note": { "1": "use *resource* for absolute (external) links", "2": "use *source* for course-repo relative (internal) links, courseBase + source" }
+        }
+      },
+      "01-the-cloud": {
+        "title": "Module 01 - The Cloud, Architecture, and Context",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module1.html" },
+          "the-cloud": { "title": "What is the Cloud?", "type": "content", "source": "/content/the-cloud.html" },
+          "ack": { "title": "Syllabus Acknowledgment", "type": "quiz", "source": "/content/syllabus-acknowledgment.html" },
+          "intro": { "title": "About me", "type": "discussion", "source": "content/01-intro.html" },
+          "end": { "title": "End of Module 1: The Cloud, Architecture, and Context", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "02-services": {
+        "title": "Module 02 - Cloud Computing and Cloud Services",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module2.html" },
+          "cloud-computing": { "title": "What is Cloud Computing?", "type": "content", "source": "/content/cloud-computing.html" },
+          "providers": { "title": "Disc: Cloud Service Providers", "type": "discussion", "source": "content/02-providers.html" },
+          "end": { "title": "End of Module 2: Cloud Computing and Cloud Services", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "03-using-cloud": {
+        "title": "Module 03 - Getting Started Using the Cloud",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module3.html" },
+          "end": { "title": "End of Module 3: Getting Started Using the Cloud", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "04-deployment": {
+        "title": "Module 04 - Cloud Deployment Types and Models",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module4.html" },
+          "end": { "title": "End of Module 4: Cloud Deployment Types and Models", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "05-serverless": {
+        "title": "Module 05 - Serverless Computing and Triggers",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module5.html" },
+          "end": { "title": "End of Module 5: Serverless Computing and Triggers", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "06-virtualization": {
+        "title": "Module 06 - Virtualization and Collaboration",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module6.html" },
+          "end": { "title": "End of Module 6: Virtualization and Collaboration", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "07-scalability": {
+        "title": "Module 07 - DBaaS and Scalability",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module7.html" },
+          "end": { "title": "End of Module 7: DBaaS and Scalability", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "08-auth": {
+        "title": "Module 08 - Authentication, Authorization, and Security",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module8.html" },
+          "end": { "title": "End of Module 8: Authentication, Authorization, and Security", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "09-n-tier": {
+        "title": "Module 09 - N-Tier Architecture and Cloud Design Patterns",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module9.html" },
+          "end": { "title": "End of Module 9: N-Tier Architecture and Cloud Design Patterns", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "10-migration": {
+        "title": "Module 10 - Cloud Migration and Management",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module10.html" },
+          "end": { "title": "End of Module 10: Cloud Migration and Management", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "11-next": {
+        "title": "Module 11 - What's Next: The Future of Cloud Computing",
+        "pages": {
+          "overview": { "title": "Module Overview", "type": "content", "source": "/content/module11.html" },
+          "end": { "title": "End of Module 11: The Future of Cloud Computing", "type": "content", "source": "/content/end-module.html"}
+        }
+      },
+      "99-resources": {}
+  },
   "templates": {
     "syllabus": "core:syllabus",
     "syllabus(override)": "syllabus/syllabus.html",
