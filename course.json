@@ -119,7 +119,12 @@
           "end": { "title": "End of Module 11: The Future of Cloud Computing", "type": "content", "source": "/content/end-module.html"}
         }
       },
-      "99-resources": {}
+      "99-resources": {
+        "title": "Module 99 - Additional Resources",
+        "pages": {
+          "late-policy": { "title": "Late Policy", "type": "page", "resource": "https://uid100.github.io/edu-core/shared/policies/late-policy.html" },
+          "online-classes": { "title": "Online Classes", "type": "page", "resource": "https://uid100.github.io/edu-core/shared/policies/online-classes.html" }
+      }
     }
   },
   "templates": {
