@@ -1,0 +1,7 @@
+[
+  { "id": "CLO #1", "outcome": "Explain basic cloud computing concepts, including what the cloud is and the differences between IaaS, PaaS, and SaaS." },
+  { "id": "CLO #2", "outcome": "Identify and distinguish between different cloud deployment models, including public, private, hybrid, and community clouds." },
+  { "id": "CLO #3", "outcome": "Describe the architecture and components of cloud computing systems." },
+  { "id": "CLO #4", "outcome": "Demonstrate the ability to use cloud services and platforms for deploying and managing applications." },
+  { "id": "CLO #5", "outcome": "Analyze the benefits and challenges associated with cloud computing adoption." }
+]
