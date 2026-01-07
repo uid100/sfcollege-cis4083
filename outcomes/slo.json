@@ -1,3 +1,15 @@
 [
-  { "id": "LO #1", "objective": "" }
+  { "id": "LO #1", "objective": "Master the concepts and principles of cloud computing." },
+  { "id": "LO #2", "objective": "Explain the basic concepts of cloud computing." },
+  { "id": "LO #3", "objective": "Identify and distinguish cloud types." },
+  { "id": "LO #4", "objective": "Explain methods of managing cloud computing systems." },
+  { "id": "LO #5", "objective": "Identify standards, best practices, and policies of cloud computing management." },
+  { "id": "LO #6", "objective": "Describe cloud services; SaaS, PaaS, IaaS, IDaaS." },
+  { "id": "LO #7", "objective": "Perform a business impact analysis." },
+  { "id": "LO #8", "objective": "Identify advantages and disadvantages of cloud-based storage." },
+  { "id": "LO #9", "objective": "Explain best practices when collaborating in the clouds." },
+  { "id": "LO #10", "objective": "Demonstrate professional level skills in the areas of disaster recovery and business continuity and the cloud." },
+  { "id": "LO #11", "objective": "Explain service-oriented architectures and web services." },
+  { "id": "LO #12", "objective": "Master techniques of using Infrastructure-as-a-Service, (IaaS), Platform-as-a-Service (Paas) and Big Data systems." },
+  { "id": "LO #13", "objective": "Master the techniques of developing, deploying, and managing cloud applications major topics: Introduction background and history of cloud computing, cloud computing concepts, cloud computing models with virtualization background and history of virtualization, virtual machines, virtual networks, virtual storage IaaS system architecture, IaaS programming, PaaS System Architecture, PaaS Programming, Big Data system architecture and Big Data programming." },
 ]
