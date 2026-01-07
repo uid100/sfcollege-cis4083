@@ -123,7 +123,7 @@
         "title": "Module 99 - Additional Resources",
         "pages": {
           "late-policy": { "title": "Late Policy", "type": "page", "resource": "https://uid100.github.io/edu-core/shared/policies/late-policy.html" },
-          "online-classes": { "title": "Online Classes", "type": "page", "resource": "https://uid100.github.io/edu-core/shared/policies/online-classes.html" }
+          "online": { "title": "Online Classes", "type": "page", "resource": "https://uid100.github.io/edu-core/shared/policies/online-classes.html" }
       }
     }
   },
