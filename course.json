@@ -52,7 +52,7 @@
         "title": "Module 02 - Cloud Computing and Cloud Services",
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module2.html" },
-          "cloud-computing": { "title": "What is Cloud Computing?", "type": "content", "source": "/content/cloud-computing.html" },
+          "cloud-computing": { "title": "What is Cloud Computing?", "type": "content", "source": "/content/02-cloud-computing.html" },
           "providers": { "title": "Disc: Cloud Service Providers", "type": "discussion", "source": "content/02-providers.html" },
           "end": { "title": "End of Module 2: Cloud Computing and Cloud Services", "type": "content", "source": "/content/end-module.html"}
         }
