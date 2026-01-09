@@ -61,6 +61,8 @@
         "title": "Module 03 - Getting Started Using the Cloud",
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module3.html" },
+          "using-cloud": { "title": "Getting Started Using the Cloud", "type": "content", "source": "/content/03-using-cloud.html" },
+          "subscriptions": { "title": "Cloud Service Provider Subscriptions", "type": "content", "source": "/content/03-subscriptions.html" },
           "end": { "title": "End of Module 3: Getting Started Using the Cloud", "type": "content", "source": "/content/end-module.html"}
         }
       },
