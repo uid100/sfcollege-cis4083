@@ -64,6 +64,13 @@
           "using-cloud": { "title": "Getting Started Using the Cloud", "type": "content", "source": "/content/03-using-cloud.html" },
           "subscriptions": { "title": "Cloud Service Provider Subscriptions", "type": "content", "source": "/content/03-subscriptions.html" },
           "end": { "title": "End of Module 3: Getting Started Using the Cloud", "type": "content", "source": "/content/end-module.html"}
+        },
+        "lab": {
+          "title": "Lab 03 - Setting Up Cloud Service Provider Accounts",
+          "tabs": {
+            "instructions": { "title": "Instructions", "type": "content", "source": "/content/lab03-instructions.html" },
+            "submission": { "title": "Submission", "type": "submission", "source": "/content/lab03-submission.html" }
+          }
         }
       },
       "04-deployment": {
