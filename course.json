@@ -67,8 +67,8 @@
         },
         "lab": {
           "title": "Lab 03 - Setting Up Cloud Service Provider Accounts",
-          "taskListUrl": "content/ex01-subscriptions/todo.json",
-          "fragmentsBase": "content/ex01-subscriptions/"
+          "taskListUrl": "https://uid100.github.io/sfcollege-cis4083/content/ex01-subscriptions/todo.json",
+          "fragmentsBase": "https://uid100.github.io/sfcollege-cis4083/content/ex01-subscriptions/"
         }
       },
       "04-deployment": {
