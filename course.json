@@ -67,10 +67,8 @@
         },
         "lab": {
           "title": "Lab 03 - Setting Up Cloud Service Provider Accounts",
-          "tabs": {
-            "instructions": { "title": "Instructions", "type": "content", "source": "/content/lab03-instructions.html" },
-            "submission": { "title": "Submission", "type": "submission", "source": "/content/lab03-submission.html" }
-          }
+          "taskListUrl": "content/ex01-subscriptions/todo.json",
+          "fragmentsBase": "content/ex01-subscriptions/"
         }
       },
       "04-deployment": {
