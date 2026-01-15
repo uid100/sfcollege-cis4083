@@ -75,7 +75,14 @@
         "title": "Module 04 - Cloud Deployment Types and Models",
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module4.html" },
+          "deployment-types": { "title": "Cloud Deployment Types and Models", "type": "content", "source": "/content/04-deployment-types.html" },
+          "disc-accts": { "title": "Discussion: Cloud Accounts and Billing", "type": "discussion", "source": "/content/04-disc-accounts.html" },
           "end": { "title": "End of Module 4: Cloud Deployment Types and Models", "type": "content", "source": "/content/end-module.html"}
+        },
+        "lab": {
+          "title": "Lab 04 - Deploying a Web Application to the Cloud",
+          "taskListUrl": "https://uid100.github.io/sfcollege-cis4083/content/ex02-deploy-webapp/todo.json",
+          "fragmentsBase": "https://uid100.github.io/sfcollege-cis4083/content/ex02-deploy-webapp/"
         }
       },
       "05-serverless": {
