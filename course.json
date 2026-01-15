@@ -81,8 +81,8 @@
         },
         "lab": {
           "title": "Lab 04 - Deploying a Web Application to the Cloud",
-          "taskListUrl": "https://uid100.github.io/sfcollege-cis4083/content/ex02-deploy-webapp/todo.json",
-          "fragmentsBase": "https://uid100.github.io/sfcollege-cis4083/content/ex02-deploy-webapp/"
+          "taskListUrl": "https://uid100.github.io/sfcollege-cis4083/content/ex02-webapps/todo.json",
+          "fragmentsBase": "https://uid100.github.io/sfcollege-cis4083/content/ex02-webapps/"
         }
       },
       "05-serverless": {

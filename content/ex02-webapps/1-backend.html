@@ -1,0 +1,464 @@
+
+<div class="card" id="ex1" style="padding: 20px;">
+    <div class="card-header">
+        <h2>Exercise 1 - Backend API</h2>
+    </div>
+    <p>Build a backend API by using the Azure Storage and the Web Apps feature of Azure App Service</p>
+    <div id="ex1-task1">
+        <h4>Task 1: Open the Azure portal</h4>
+        <div id="ex1task1detail">
+            <ol>
+                <li>Browse* to the Azure portal (https://portal.azure.com), and sign in with your
+                    account.
+                </li>
+            </ol>
+            <p>(optional) Microsoft's instructions specify using the Microsoft Edge browser.
+                This is not necessary. Any modern browser will work fine.</p>
+            </p>
+            <p>&nbsp;</p>
+        </div> <!-- #ex1task1detail -->
+    </div> <!-- #ex1-task1 -->
+    <div id="ex1-task2">
+        <h4>Task 2: Create a Storage account</h4>
+        <div id="ex1task2detail">
+            <ol>
+                <li>In the Azure portal, use the <strong> Search resources, services, and docs </strong>
+                    text box to search for <strong>Storage Accounts</strong>, and then in the list of
+                    results, select <strong>Storage Accounts</strong>.</li>
+                <li>On the&nbsp;<strong>Storage accounts</strong>&nbsp;blade, select <strong>+
+                        Create</strong>.</li>
+                <li>On the&nbsp;<strong>Create a storage account</strong>&nbsp;blade, on the
+                    <strong>Basics</strong> tab, perform the following actions, and then select
+                    <strong>Review</strong>
+                    <table class="table table-striped">
+                        <caption>Storage Account Settings</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Setting</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Subscription</strong> drop-down list</td>
+                                <td>Retain the default value</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Resource group</strong> section</td>
+                                <td>Select <strong>Create new</strong>, enter
+                                    <strong>ManagedPlatform</strong>, and then select
+                                    <strong>OK</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Storage account name</strong>&nbsp;text box</td>
+                                <td>Enter <strong>imgstor</strong>_[yourname]_</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Region</strong> drop-down list</td>
+                                <td>Select <strong>(US) East US</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Performance</strong> section</td>
+                                <td>Select the <strong>Standard</strong> option</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Redundancy</strong> drop-down list</td>
+                                <td>Select <strong>Locally-redundant storage (LRS)</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <div id="fig1" style="margin: 20px;">
+                        <p style="text-align: center;">Storage Account settings screenshot</p>
+                        <img src="https://courses.sfcollege.edu/courses/455772/files/46302676/preview"
+                            alt="Storage Account Settings"
+                            data-api-endpoint="https://courses.sfcollege.edu/api/v1/courses/455772/files/46302676"
+                            data-api-returntype="File" />
+                    </div>
+                </li>
+                <li>On the <strong>Review</strong> tab, review the options that you selected during the
+                    previous steps.</li>
+                <li><em>Updated: 21-Feb-2024</em> Remember these instructions are written for a live
+                    website
+                    which is subject to change <em>all the time!</em><br />Last time I walked through
+                    this,
+                    I also had to go to the Advanced tab and select: <strong>Allow enabling anonymous
+                        access
+                        on individual containers</strong> before <strong>Review</strong> and
+                    <strong>Create</strong><br>
+                    <em>Updated: 21-Jan-2025</em> Sane note as before. This is still a necessary step.
+                </li>
+                <li>Select <strong>Create</strong> to create the storage account by using your specified
+                    configuration.<br /><em>Note: Wait for the create task to complete.</em></li>
+                <li>On the <strong>Overview blade,</strong> select the <strong>Go to resource</strong>
+                    button to navigate to the blade of the newly created storage account.</li>
+                <li>On the&nbsp;<strong>Storage account</strong>&nbsp;blade, in
+                    the&nbsp;<strong>Security +
+                        networking</strong> section, select <strong>Access keys</strong>.</li>
+                <li>On the&nbsp;<strong>Access keys</strong>&nbsp;blade, select <strong>Show
+                        keys</strong>.
+                </li>
+                <li>Review any one of the keys, and then copy the value of either of
+                    the&nbsp;<strong>Connection string</strong>&nbsp;boxes to the clipboard.<br /><em>
+                        **Note**: It doesn't matter which connection string you choose. They are
+                        interchangeable. </em></li>
+                <li>Paste the copied connection string value to a text editor. You'll need this later.
+                    <em>Microsoft recommends Notepad.</em>
+                </li>
+            </ol>
+        </div> <!-- #ex1task2detail -->
+    </div> <!-- #ex1-task2 -->
+    <div id="ex1-task3">
+        <h4>Task 3: Upload a sample blob</h4>
+        <div id="ex1task3detail">
+            <p>Now that you have configured a <strong>Storage Account</strong> service, you can attach a
+                container and upload a <em>binary large object (blob),</em> in this case, image files.
+            </p>
+            <ol>
+                <li>On the <strong>Storage Account</strong> blade, in the <strong>Data storage</strong>
+                    section, select the <strong>Containers</strong> link.</li>
+                <li>On the <strong>Containers</strong> blade, select <strong>+ Container</strong>.</li>
+                <li>In the <strong>New container</strong> window, perform the following actions:
+                    <table class="table table-striped">
+                        <caption>Create New Container</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Setting</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Name</strong> text box</td>
+                                <td>Enter <strong>images</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Public access level</strong> list</td>
+                                <td>Select <strong>Blob (anonymous read access for blobs only)</strong>,
+                                    and
+                                    then select <strong>Create</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>On the <strong>Containers</strong> blade, select the newly created
+                    <strong>images</strong> container.
+                </li>
+                <li>On the <strong>images</strong> blade, select <strong>Upload</strong>.</li>
+                <li>In the <strong>Upload blob</strong> window, perform the following actions:
+                    <table class="table table-striped">
+                        <caption>upload</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Setting</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Files</strong> section</td>
+                                <td>Select the <strong>Folder</strong> icon</td>
+                            </tr>
+                            <tr>
+                                <td><strong>File Explorer</strong> window</td>
+                                <td>unzip the downloaded file and select
+                                    <strong>Images\\grilledcheese.jpg</strong>, and then select
+                                    <strong>Open</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Overwrite if files already exist</strong> check box</td>
+                                <td>Ensure that the check box is selected, and then select
+                                    <strong>Upload</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-style: italic;">Note: Wait for the blob to upload before you
+                        continue.
+                    </p>
+                </li>
+            </ol>
+        </div> <!-- #ex1task3detail -->
+    </div> <!-- #ex1-task3 -->
+    <div id="ex1-task4">
+        <h4>Task 4: Create a web app</h4>
+        <div id="ex1task4detail">
+            <ol>
+                <li>On the Azure portal's navigation pane, select <strong>Create a resource</strong>.
+                </li>
+                <li>On the <strong>Create a resource</strong> blade, in the <strong>Search services and
+                        marketplace</strong> text box, enter <strong>Web App</strong>, and then select
+                    Enter.</li>
+                <li>On the <strong>Marketplace</strong> search results blade, select the <strong>Web
+                        App</strong> result.</li>
+                <li>On the <strong>Web App</strong> blade, select <strong>Create</strong>.</li>
+                <li>On the <strong>Create Web App</strong> blade, on the <strong>Basics</strong> tab,
+                    perform the following actions, and then select the <strong>Monitoring</strong> tab:
+                    <table class="table table-striped">
+                        <caption>Create Web App settings</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Setting</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Subscription</strong> drop-down list</td>
+                                <td>Retain the default value</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Resource group</strong> section</td>
+                                <td>Select <strong>ManagedPlatform</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Name</strong>&nbsp;text box</td>
+                                <td>Enter <strong>imgapi</strong>_[yourname]_</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Publish</strong> section</td>
+                                <td>Select <strong>Code</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Runtime stack</strong> drop-down list</td>
+                                <td>Select <strong>.NET 6 (LTS)</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Operating System</strong> section</td>
+                                <td>Select <strong>Windows</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Region</strong> drop-down list</td>
+                                <td>Select the <strong>East US</strong> region</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Windows Plan (East US)</strong> section</td>
+                                <td>Select <strong>Create new</strong>, enter the value
+                                    <strong>ManagedPlan</strong> in the <strong>Name</strong> text box,
+                                    and
+                                    then select <strong>OK</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SKU and size</strong> section</td>
+                                <td>Retain the default value</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Create Web App settings</p>
+                    <p>Note: try the selection menu drop-down in the Pricing Plan.</p>
+                    <img style="margin-left: auto; margin-right: auto;"
+                        src="https://courses.sfcollege.edu/courses/455772/files/46302944/preview"
+                        alt="Web App Pricing Plans" width="400"
+                        data-api-endpoint="https://courses.sfcollege.edu/api/v1/courses/455772/files/46302944"
+                        data-api-returntype="File" />
+                    <p>The default setting for the App will work fine. There is a <strong>Free
+                            (F1)</strong>
+                        setting. Here it indicates 60 CPU Minutes/day. For development and testing that
+                        is
+                        usually plenty. You can always scale it up later.</p>
+                    <p class="ic-flash-info">Always check the defaults.</p>
+                    <p>Also, changing the region will usually have a big impact on estimated cost.</p>
+                    <img style="margin-left: auto; margin-right: auto;"
+                        src="https://courses.sfcollege.edu/courses/455772/files/46302946/preview"
+                        alt="web app settings" width="400"
+                        data-api-endpoint="https://courses.sfcollege.edu/api/v1/courses/455772/files/46302946"
+                        data-api-returntype="File" />
+                </li>
+                <li>On the <strong>Monitoring</strong> tab, in the <strong>Enable Application
+                        Insights</strong> section, select <strong>No</strong>, and then select
+                    <strong>Review + create</strong>.
+                </li>
+                <li>On the <strong>Review + create</strong> tab, review the options that you selected
+                    during
+                    the previous steps.</li>
+                <li>Select <strong>Create</strong> to create the web app by using your specified
+                    configuration.<br /><span style="font-style: italic;"> Note: Wait for the web app to
+                        be
+                        created before you continue with this lab. </span></li>
+                <li>On the <strong>Overview</strong> blade, select the <strong>Go to resource</strong>
+                    button to navigate to the blade of the newly created web app.</li>
+            </ol>
+        </div>
+    </div> <!-- #ex1-task4 -->
+    <div id="ex1-task5">
+        <h4>Task 5: Configure the web app</h4>
+        <div id="ex1task5detail">
+            <ol>
+                <li>
+                    (<em>Updated: 22-Jan-2025</em>)
+                    On the <strong>App Service</strong> blade, in the <strong>Settings</strong> section,
+                    select the Environment variables menu item.<br>
+                    <strong>+ Add</strong> a new environment variable.
+                </li>
+                <li>In the <strong>Add/Edit</strong> dialog, perform the following
+                    actions, then select <strong>Save</strong>, and then select
+                    <strong>Continue</strong>.
+                    <table class="table table-striped">
+                        <caption>web app settings</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Setting</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Name</strong>
+                                </td>
+                                <td>Enter <strong>StorageConnectionString</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Value</strong> text box</td>
+                                <td>Paste the storage connection string that you previously copied to
+                                    Notepad</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Deployment slot setting</strong> text box</td>
+                                <td>Check this box</td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span style="font-style: italic;"> Click Apply to <strong>Save</strong> your changes
+                        and wait for your application settings to save before you continue. </span>
+                </li>
+                <li>On the <strong>App Service</strong> blade in the <strong>Settings</strong> *
+                    section, select the <strong>Properties</strong> link.<br>
+                    <em>Updated: 22-Jan-2025</em> The <strong>URL</strong> is now in the
+                    <strong>Properties</strong> section.
+                </li>
+                <li>In the <strong>Properties</strong> section, copy the value of the
+                    <strong>URL</strong>
+                    hyperlink, and then paste it to Notepad. You'll use this value later in the
+                    lab.<br /><span style="font-style: italic;"> <strong>Note</strong>: At this point,
+                        the web server at this URL will return a placeholder webpage. You haven't
+                        deployed any code to the Web App yet. You'll deploy code to the Web App later in
+                        this lab.<br>
+                        The application (API) expects an application environement variable called
+                        <strong>StorageAccountName</strong> to be set to the connection string of the
+                        storage account.<br>
+                        You can test the URL from your browser. There is nothing there, but the link
+                        should work.
+                    </span>
+                </li>
+            </ol>
+        </div>
+    </div> <!-- #ex1-task5 -->
+    <div id="ex1-task6">
+        <h4>Task 6: Deploy an ASP.NET web application to Web Apps</h4>
+        <div id="ex1task6detail"">
+        <ol>
+            <li>Start Visual Studio (or Visual Studio Code)</li>
+            <li>On the <strong>File</strong> menu, select <strong>Open Folder</strong></li>
+            <li>In the <strong>File Explorer</strong> window, browse to the <strong>API</strong> folder
+                from the downloaded (unzipped) zipfile, and then select <strong>Select
+                    Folder</strong><br /><i> <strong>Note</strong>: Ignore any prompts to add required
+                    assets to build and debug and to run the restore command to address unresolved
+                    dependencies. </i></li>
+            <li>On the&nbsp;<strong>Explorer</strong>&nbsp;pane of the <strong> Visual Studio
+                    Code</strong> window, expand the&nbsp;<strong>Controllers</strong> folder, and then
+                select the <strong>ImagesController.cs</strong> file to open the file in the editor.
+            </li>
+            <li>In the editor, in the <strong>ImagesController</strong> class on line 26, observe the
+                <strong>GetCloudBlobContainer</strong> method and the code used to retrieve a container.
+            </li>
+            <li>In the <strong>ImagesController</strong> class on line 36, observe the
+                <strong>Get</strong> method and the code used to retrieve all blobs asynchronously from
+                the <strong>images</strong> container.
+            </li>
+            <li>In the <strong>ImagesController</strong> class on line 55, observe the
+                <strong>Post</strong> method and the code used to persist an uploaded image to Storage.
+            </li>
+            <li>Sign in to the Azure Command-Line Interface (CLI) by entering<br />
+                <pre>az login</pre>
+                <br />at the Windows command line.<br />If you get response that the cmd is not
+                recognized, you need to install the Azure CLI. Get more information at
+                https://learn.microsoft.com/en-us/cli/azure/install-azure-cli. <br />Downloading and
+                running the installer does not take long.<br />When you login, the command will launch a
+                browser to finish the sign in, when it is successful, you can close the browser.
+            </li>
+            <li>Return to the currently open Windows terminal <strong>Command Prompt</strong> (or
+                Powershell) window. Wait for the sign-in process to finish.</li>
+            <li>At the command prompt, enter the following command, and then select Enter to list all
+                the apps in your **ManagedPlatform** resource group:<br />
+                <pre>az webapp list --resource-group ManagedPlatform</pre>
+                <p class=" ic-flash-info"><strong>Error:</strong> If you the command returns: Resource
+            group 'ManagedPlatform' could not be found<br />Check that the resource group name
+            matches of if you have multiple subscriptions, change the current subscription to
+            the correct one.<br />azure config set --subscription &lt;SubscriptionName&gt;</p>
+            <p>&nbsp;</p>
+            <p class="ic-flash-info"><em>12-Feb-2024</em> another update! (loving this!) If you have
+                multiple accounts (I do) az config set ... doesn't work the same way anymore (it's
+                listed as experimental) try using
+                <code>az account set --subscription "[subscr-id]"</code> instead.
+            </p>
+            for more see https://learn.microsoft.com/en-us/cli/azure/account?view=azure-cli-latest
+            </li>
+            <li>Enter the following command, and then select Enter to find the apps that have the
+                <strong>imgapi\\*</strong> prefix:<br />
+                <pre>az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgapi')]"</pre>
+            </li>
+            <li>Enter the following command, and then select Enter to render only the name of the single
+                app that has the <strong>imgapi\*</strong> prefix:<br />
+                <pre>az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgapi')].{Name:name}" --output tsv</pre>
+            </li>
+            <li>Change the current directory to the location of the <strong>API</strong> folder that
+                contains the lab files</li>
+            <li>To deploy the <strong>api.zip</strong> file to the new web app that you created,
+                Enter:<br />
+                <pre>az webapp deploy --resource-group ManagedPlatform  --name &lt;name-of-your-api-app&gt; --type zip --src-path api.zip</pre>
+                <br /><i> <strong>Note</strong>: Replace the &lt;name-of-your-api-app\&gt; placeholder
+                    with the name of the web app that you created previously in this lab. You queried
+                    this app&rsquo;s name in the previous steps.<br />Wait for the deployment to
+                    complete before you continue with this lab. </i>
+            </li>
+            <li>On the Azure portal's <strong>navigation</strong> pane, select the <strong>Resource
+                    groups</strong> link.</li>
+            <li>On the <strong>Resource groups</strong> blade, select the
+                <strong>ManagedPlatform</strong> resource group that you created previously in this lab.
+            </li>
+            <li>On the <strong>ManagedPlatform</strong> blade, select the
+                <strong>imgapi</strong><i>[yourname]</i> web app that you created previously in this
+                lab.
+            </li>
+            <li>From the <strong>App Service</strong> blade, select <strong>Browse</strong><br /><i>
+                    <strong>Note</strong>: The <strong>Browse</strong> command will perform a GET
+                    request to the root of the website, which returns a JavaScript Object Notation
+                    (JSON) array. This array should contain the URL for your single uploaded image in
+                    your Storage account. </i></li>
+            </ol>
+        </div>
+    </div> <!-- #ex1-task6 -->
+    <h3>Review</h3>
+    In this exercise, you:
+    <ul>
+        <li>created a storage account with a container and seeded it with data.</li>
+        <li>created web app in Azure, and then deployed your ASP.NET web application to Web Apps by
+            using
+            the Azure CLI and Apache Kudu zip file deployment utility.</li>
+        <li>tested and demonstrated the functionality of the new custom API</li>
+    </ul>
+    <p>&nbsp;</p>
+    <div class="ic-flash-info" style="background-color: yellow;">
+        <p>From the command line, run the command <code>curl &lt;url&gt;</code> where
+            <em>&lt;url&gt;</em>
+            is the full url to your API(https://...)
+        </p>
+        <p>Take a screenshot of the output AND the URL from your browser window. Save this for later.
+        </p>
+    </div>
+    <p>The example is the output from Windows Powershell. The detail and format will look different on
+        your
+        configuration.</p>
+    <p>All of these steps have been tested on Windows 11 and MacOS.</p>
+    <p><img style="margin-left: auto; margin-right: auto;"
+            src="https://courses.sfcollege.edu/courses/455772/files/46306478/preview" alt="API return"
+            width="400"
+            data-api-endpoint="https://courses.sfcollege.edu/api/v1/courses/455772/files/46306478"
+            data-api-returntype="File" /></p>
+    <p style="text-align: center; font-style: italic;"><a href="#ex1">back</a></p>
+</div> <!-- #ex1 -->
