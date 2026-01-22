@@ -98,6 +98,7 @@
         "title": "Module 06 - Virtualization and Collaboration",
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module6.html" },
+          "vm": { "title": "Virtualization and Collaboration", "type": "content", "source": "/content/06-virtualization.html" },
           "end": { "title": "End of Module 6: Virtualization and Collaboration", "type": "content", "source": "/content/end-module.html"}
         }
       },
