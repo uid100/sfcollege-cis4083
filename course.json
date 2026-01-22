@@ -99,6 +99,7 @@
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module6.html" },
           "vm": { "title": "Virtualization and Collaboration", "type": "content", "source": "/content/06-virtualization.html" },
+          "vpn": { "title": "Virtual Private Networks (VPNs)", "type": "content", "source": "/content/06-vpn.html" },
           "end": { "title": "End of Module 6: Virtualization and Collaboration", "type": "content", "source": "/content/end-module.html"}
         }
       },
