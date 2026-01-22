@@ -90,6 +90,7 @@
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module5.html" },
           "serverless": { "title": "Serverless Computing and Triggers", "type": "content", "source": "/content/05-serverless.html" },
+          "function-exer": { "title": "Create and Deploy Serverless Functions", "type": "exercise", "source": "/content/05-serverless-ex.html" },
           "end": { "title": "End of Module 5: Serverless Computing and Triggers", "type": "content", "source": "/content/end-module.html"}
         }
       },
