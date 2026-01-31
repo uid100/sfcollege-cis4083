@@ -1,0 +1,136 @@
+<div class="card" style="margin-bottom: 20px;">
+    <div class="card-header">Database on IaaS</div>
+    <div class="card-body" style="padding-top: 10px;">
+        <div id="ex3" style="padding: 20px;">
+            <h2 class="alert alert-info">Exercise 3</h2>
+            <h3>Deploying SQL Server on Azure VM</h3>    
+            <h3 style="font-style: italic;">Demonstration</h3>
+            <div id="intro3">
+                <p class="boxed=paragraph" style="width: 70%; margin: auto;">
+                    Reminder, instructions for platforms that exist on an external service such as Microsoft Azure,
+                    Amazon Web Services, Google Cloud Platform, Oracle Cloud, IBM Cloud, etc., are subject to change
+                    without notice. Cloud service providers are continually updating and improving their services,
+                    adding new features, changing pricing models, and modifying user interfaces. Always refer to the
+                    official documentation and resources provided by the cloud service provider for the most accurate
+                    and up-to-date information.
+                </p>
+                <p><code>"Currently unable to deploy Azure database server resources."</code></p>
+                <p>
+                    For a while, in the Spring of 2020, there was unprecedented demand on cloud resources while 
+                    many industries were scrambling to stay productive under federal stay-at-home orders, cloud 
+                    service providers had as a fundamental mission statement, managing and maintaining geo-redundant 
+                    remote services and regional risk mitigation, were working to manage load and prioritize critical 
+                    systems for the increased demand on limited resources.</p>
+                <p>And so, for a brief time, Azure subscriptions configured for education were deprioritized and 
+                    had very limited capability to configure and deploy Azure SQL Server (PaaS) instances. Azure 
+                    training documents reference the benefits of using Azure SQL database as a service (DBaaS) in 
+                    contrast to creating a virtual machine, then installing and configuring and managing the system, 
+                    firewall(s) and a SQL server instance.</p>
+                <p>Needed to host a shared remote database. This was the temporary, tested workaround.</p>
+                <p>&nbsp;</p>
+                <p style="font-style: italic;">Follow along, read through the steps and add your responses to your 
+                    assignment where indicated. Following these steps to build and deploy SQL Server on a cloud VM 
+                    is optional.</p>
+            </div> <!-- intro3 -->
+            <div id="step1-vm">
+                <h3 class="alert alert-info">Step 1.</h3>
+                <h3>Build and Deploy (Windows) Virtual Machine</h3>
+                <p>Create VM use Windows 10 From the Size diaglog, sort by cost and select the minimum configuration. 
+                    This is adequate for student database requirements. This setting may be unsatisfactory for running 
+                    any developer or activities beyond a single SQL Server instance. We can scale up if we need to.</p>
+                <p>This estimated cost is very reasonable, <del> but can be reduced further by using Linux instead of 
+                    Windows 10. </del> Edited: this is not correct. Since SQL Server is not currently available for 
+                    macOS or Linux platforms.</p>
+                <p>Enable RDP port, review and deploy.</p>
+                <p>
+                    <img 
+                        src="https://uid100.github.io/sfcollege-cis4083/images/CreateVMforSQL.JPG" 
+                        alt="create azure vm" /></p>
+                <p style="font-style: italic;">
+                    note: the first deployment failed. steps were repeated using SqlDbWinVM1 and assigned a 
+                    new IP address: 13.78.132.132. Results will be the same but the actual machine instance may 
+                    not match the screenshots</p>
+            </div> <!-- step1-vm -->
+            <div id="step2-firewall">
+                <h3 class="alert alert-info">Step 2.</h3>
+                <h3>Configure Azure network firewall</h3>
+                <p>
+                    From Networking settings, <strong>Add Inbound Port Rule</strong> to enable inbound SQL TCP port 
+                    traffic (typically: 1433)</p>
+                <p>
+                    <img src="https://uid100.github.io/sfcollege-cis4083/images/AddInboundPortRuleforSQL.JPG" 
+                         alt="Add inbound port rule" /></p>
+                    alt="Add inboard port rule" /></p>
+            </div> <!-- step2-firewall -->
+            <div id="step3-install-SQL">
+                <h3 class="alert alert-info">Step 3.</h3>
+                <h3>Connect to VM, Install &amp; Configure SQL Server</h3>
+                <p>Connect to VM using Remote Desktop (on port 3389), enter credentials and accept security certificate.</p>
+                <p>
+                    <img src="https://uid100.github.io/sfcollege-cis4083/images/RDPforSQL.JPG" 
+                    alt="Remote Desktop Client" /></p>
+                <p>The first connection on startup to the Windows machine may take some time.</p>
+                <p>Download and install SQL Server. I used Developer Edition for this demonstration</p>
+                <h3>Configure SQL Server to use TCP/IP</h3>
+                <p>After the installation completes, open Sql Server Configuration Manager and enable TCP/IP protocol.</p>
+                <p>Run SQL Configuration on the remote VM</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/SQLConfiguration.JPG" alt="SQL Configuration" /></p>
+                <p>&nbsp;</p>
+                <p>Enable TCP/IP</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/EnableTCPIP.JPG" alt="Enable TCP/IP" /></p>
+                <p>&nbsp;</p>
+                <p>Enable TCP Ports</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/EnableTCPPorts.JPG" alt="Enable TCP Ports" /></p>
+                <p>&nbsp;</p>
+                <p>And restart the SQL Service to enable the changes</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/SQLRestart.JPG" alt="SQL Restart" /></p>
+            </div> <!-- step3-install-SQL -->
+            <div id="step4-auth">
+                <h3 class="alert alert-info">Step 4.</h3>
+                <h3>Configure SQL Authentication</h3>
+                <p>Configuring SQL Server can be done from the command line, but SQL Server Management Studio (SSMS) will simplify this task.</p>
+                <p>Connect to the SQL Server (with SSMS), using Windows Authentication and setup SQL Authentication</p>
+                <p>Add and configure new Sql Login</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/AddSQLPassword.JPG" alt="Add SQL Password" /></p>
+                <p>&nbsp;</p>
+                <p>Add SQL Login</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/AddSQLLogin.JPG" alt="Add SQL Login" /></p>
+                <p>&nbsp;</p>
+                <p>set DbMapping</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/DbMapping.JPG" alt="DbMapping permissions" /></p>
+                <p>&nbsp;</p>
+                <p>Set User Roles</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/SetUserRoles.JPG" alt="Set User Roles" /></p>
+                <p>&nbsp;</p>
+                <p>Setup SQL Server to use SQL Authentication EnableSqlAuthentication</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/EnableSqlAuthentication.JPG" alt="Enable SQL Authentication" /></p>
+            </div> <!-- step4-auth -->
+            <div id="step5-firewall">
+                <h3 class="alert alert-info">Step 5.</h3>
+                <h3>Configure Windows Firewall</h3>
+                <p>Windows also installs a Firewall by default and the port exception needs to be added there as well.</p>
+                <p>Set port 1433 to allow connections and save changes</p>
+                <p>Add Inbound Port Exception to Windows Firewall</p>
+                <p>Log out of the VM, leaving it running (or simply close the remote desktop session).</p>
+                <p>Test the remote connection. tcp:IP,port \ ServerName</p>
+                <p>tcp(colon) ipaddress(comma) port_number</p>
+                <p><img src="https://uid100.github.io/sfcollege-cis4083/images/TestConnection.JPG" alt="Test Connection" /></p>
+            </div> <!-- step5-firewall -->
+            <div id="finish-ex3">
+                <h3 class="alert alert-info">Wrap-up</h3>
+                <p>In the first part of the lab you created, deployed, and exercised cloud database services. Although these are 
+                    widely referred to as database-as-a-service DBaaS, recognized that they are specialized instances of the 
+                    platform-as-a-service, PaaS.</p>
+                <p>In contrast, in the last exercise you had a look at implementing a database solution from an 
+                    infrastructure-as-a-service model perpective. In this case, we were responsible to create and scale the 
+                    computer, install all of the needed software components and manage them for security patches and feature 
+                    updates as needed. The result was a fully functional cloud-hosted database resource, but not a DBaaS strictly 
+                    speaking.</p>
+                <p style="background-color: yellow;"><strong>Lab Task 4:</strong> List the high-level steps covered in this 
+                    demo to create and use SQL Server hosted on a VM. Add this to your Word Document.</p>
+                <p>&nbsp;</p>
+                <p>Don't forget to delete any unneeded resources from your cloud service accounts. Upload your document to Canvas.</p>
+            </div> <!-- finish-ex3 -->
+        </div> <!-- ex3 -->
+    </div> <!-- card-body -->
+</div> <!-- card -->
