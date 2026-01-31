@@ -2,6 +2,5 @@
   { "title": "Instructions", "file": "0-description.html" },
   { "title": "Exercise 1 - Azure SQL", "file": "1-azuresql.html" },
   { "title": "Exercise 2 - AWS and DynamoDB", "file": "2-dynamodb.html" },
-  { "title": "Exercise 3 - using SQL in IaaS", "file": "3-db-iaas.html" },
-  { "title": "Submit Your Work", "file": "9-submit.html" }
+  { "title": "Exercise 3 - using SQL in IaaS", "file": "3-db-iaas.html" }
 ]
