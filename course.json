@@ -124,6 +124,8 @@
         "title": "Module 08 - Authentication, Authorization, and Security",
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module8.html" },
+          "identity": { "title": "Identity", "type": "content", "source": "/content/08-identity.html" },
+          "user-auth": { "title": "User Authentication", "type": "content", "source": "/content/08-user-auth.html" },
           "end": { "title": "End of Module 8: Authentication, Authorization, and Security", "type": "content", "source": "/content/end-module.html"}
         }
       },
