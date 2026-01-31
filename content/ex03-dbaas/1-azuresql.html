@@ -1,0 +1,274 @@
+<div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+    <div class="card-header">Exercise 1 - Azure SQL Database</div>
+    <div class="card-body" style="padding: 10px;">
+        <p>
+            In this exercise, you will provision and deploy a SQL Server instance on 
+            Microsoft Azure, connect and use it.</p>
+        <p>Follow the steps below:</p>
+    </div> <!-- .card-body -->
+    <div class="card-body" style="padding: 10px;">
+        <div id="ex1" style="padding: 20px;">
+            <h2 class="alert">Exercise 1</h2>
+            <h3>Azure SQL Database</h3>
+            <div id="ex1-intro">
+                <p>
+                    Follow the steps to provision and deploy a SQL Server instance on Microsoft Azure, 
+                    connect and use it.</p>
+                <p>Copy the data where indicated in the instructions.</p>
+            </div>
+            <div class="card" id="part1">
+                <div class="card-header">Part 1: Setup the Database</div>
+                <div class="card-body">
+                    <ol style="list-style: decimal;">
+                        <li>(Logged in to the Azure portal) Select <strong>Create a resource</strong> and 
+                            select <strong>SQL Database</strong> from the Marketplace and <strong>Create.</strong></li>
+                        <li>From the <strong>Create SQL Database</strong> window (<em>blade</em>):
+                            <ol style="list-style: lower-alpha;">
+                                <li>Check that your active subscription is selected, if you have more than one.</li>
+                                <li>Create a resource group. I created one called <strong>RG_SQL_Demo</strong></li>
+                                <li>Name your database. I used: <strong>SimpleSqlDemoDb</strong></li>
+                                <li>Below the Server* entry box, chose <strong>Create new.</strong><br />This opens 
+                                    a new <strong>Server details</strong> pane
+                                    <ol style="list-style: lower-roman;">
+                                        <li>Server name* This must be a unique name. I chose 
+                                            <strong>sqldemoserver-uid100</strong> for mine. <em>.database.windows.net</em> 
+                                            will be added to the FQDN.</li>
+                                        <li>
+                                            Location* This defaulted to <strong>(US) East US</strong> you may choose to 
+                                            change this. It may impact service costs.</li>
+                                        <li>
+                                            For <strong>Authentication</strong>, Use SQL authentication and set an admin 
+                                            and Password. Remember these.</li>
+                                    </ol>
+                                    These are the server configuration settings. The server isn't created yet.<br />
+                                    Click <strong>OK</strong><br /><br />
+                                    <img style="display: block; margin-left: auto; margin-right: auto; border: 2px solid;" 
+                                    src="https://uid100.github.io/sfcollege-cis4083/images/create_db_server.png" 
+                                    alt="database server settings" width="635" height="404" />
+                                </li>
+                                <li>Workload environment: <br />
+                                    <div style="background-color: yellow;">Use caution here!</div>
+                                    By default this will be set to <strong>Production</strong>.<br />Scroll down and take 
+                                    note of your <strong>ESTIMATED COST / MONTH</strong><br />In my case this was 
+                                    approximately $375/month. This may be warranted and reasonable for your production 
+                                    environment (remember the scaling discussion?) Even just a couple of days at that 
+                                    rate is going to be far more than my budget wants to handle for a classroom demo! 
+                                    Go back and set the workload environment to "Development" and check again. Divide 
+                                    the estimated cost by 30 days and by 24 hours, and you're probably back in the 
+                                    <em>very reasonable</em> range.<br />Also, consider clicking on the 
+                                    <strong>Configure database</strong> link on the Compute + storage * category and 
+                                    browse through estimated costs on other configurations.
+                                    <p style="background-color: yellow;">Did you remember to set this back to 
+                                        <strong>Development?</strong></p>
+                                    <p>
+                                        <img style="display: block; margin-left: auto; margin-right: auto; border: 2px solid;" 
+                                        src="https://uid100.github.io/sfcollege-cis4083/images/createSqlDb.png" 
+                                        alt="Configure the database" width="655" height="563" /></p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Lastly, you can set the backup storage redundancy to Local. This installation isn't 
+                                        going to involve critical data or need for disaster recover plans.</p>
+                                    <p>Scroll down to see the Estimated cost panel at the bottom of the pane</p>
+                                    <p>
+                                        <img style="display: block; margin-left: auto; margin-right: auto; border: 2px solid;" 
+                                            src="https://uid100.github.io/sfcollege-cis4083/images/costEstimate.png" 
+                                            alt="estimated cost" /></p>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p>
+                                The next tab contains <strong>Networking</strong> configuration.<br />
+                                You will need to set up the Firewall to allow access from your local IP address. Most of the 
+                                time Azure services such as your web apps and APIs will also need access. For now, change the 
+                                settings to enable a Public endpoint and Add your current client IP address to the firewall 
+                                rule.
+                            </p>
+                            <p>
+                                <img style="display: block; margin-left: auto; margin-right: auto; border: 2px solid;" 
+                                    src="https://uid100.github.io/sfcollege-cis4083/images/databaseFirewall.png" 
+                                    alt="enable remote access through the database server firewall" 
+                                    width="661" height="471" /></p>
+                        </li>
+                        <li>
+                            <p>
+                                You can browse through the other tabs, or go straight to <strong>Review + create</strong>.
+                            </p>
+                            <p>
+                                Here again, review the cost estimate and if you agree with it, click <strong>Create</strong> at 
+                                the bottom of the pane.
+                            </p>
+                            <p><
+                                img 
+                                    style="display: block; margin-left: auto; margin-right: auto; border: 2px solid;" 
+                                    src="https://uid100.github.io/sfcollege-cis4083/images/costEst2.png" 
+                                    alt="review the estimated cost and other settings" width="610" height="299" />
+                            </p>
+                            <p>
+                                In my example, $4.78 / 30 days / 24 hours = &lt; $.01 / hour. Even if I want to use it for a day 
+                                or so, not life-changing.
+                            </p>
+                            <p>
+                                Azure will provision the server and initial database and set up the firewall. This will usually 
+                                take a minute or two. I have seen it take much longer, but only in unusual circumstances.
+                            </p>
+                            <p>
+                                When the process is complete you will be asked to go to the resource page. If you leave the page, 
+                                the process will still complete, and the notification that it finished will be waiting for you, 
+                                or you can simply find the new resource on your main page in the portal.
+                            </p>
+                            <p>
+                                <img 
+                                    style="display: block; margin-left: auto; margin-right: auto;" 
+                                    src="https://uid100.github.io/sfcollege-cis4083/images/dbReady.png" 
+                                    alt="database resource is ready" width="640" height="375" />
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The database resource pane has a lot of good resources available. From here you can add IP addresses 
+                                to the firewall exceptions if you or someone else needs access from another location, or you can reset 
+                                your admin username and password if they are forgotten, and of course you can scale up and down if you 
+                                need to increase the resource capabilities for performance, or tune them down to manage costs.
+                            </p>
+                            <p>
+                                Notice the Server name. This is the FQDN for the database server that you set from the main configuration 
+                                page.
+                            </p>
+                            <p>
+                                <img 
+                                    style="display: block; margin-left: auto; margin-right: auto;" 
+                                    src="https://uid100.github.io/sfcollege-cis4083/images/jsonView.png" 
+                                    alt="Get the JSON View" width="600" height="314" />
+                                </p>
+                            <p>Click the link to see the JSON View.</p>
+                            <p style="background-color: yellow;">
+                                <strong>Lab Task 1:</strong> Copy and Paste this (JSON data) to a Word Document.
+                            </p>
+                        </li>
+                    </ol>
+                </div> <!-- .card-body -->
+            </div> <!-- .card -->
+            <div class="card" id="part2">
+                <div class="card-header">Part 2: Test the Database</div>
+                <div class="card-body">
+                    <ol style="list-style: decimal;">
+                        <li>
+                            <p>Open a database client application.</p>
+                            <p>My database client of choice is Microsoft's SQL Server Management Studio, sometimes 
+                                referred to as SSMS. This is a free download for Windows.
+                            </p>
+                            <p>
+                                There are a number of SQL client applications available for MACOS and Linux, including 
+                                Microsoft's Azure Data Studio. It has been a while since I've used those, so you'll need 
+                                to do some research, or find a Windows if needed. SSMS is not available for MacOS.
+                            </p>
+                            <p class="boxed-paragraph" style="width: 80%; margin-left: auto; margin-right: auto;">
+                                <strong>Note for MacOS and Linux users:</strong> Microsoft is dropping support and
+                                development for Azure Data Studio. They are recommending using Visual Studio Code with the
+                                SQL Server extension. You can find more information on the Microsoft Docs site.
+                            </p>
+                            <p>
+                                <strong>Note:</strong> If you are using SSMS, make sure you have the latest version. 
+                                Older versions may not support the latest TLS security protocols required to connect 
+                                to Azure SQL Databases.
+                            </p>
+                            <p>
+                                When you start SSMS or your favorite SQL client, you will first need to connect to the 
+                                database server.</p>
+                            <p>
+                                <img style="display: block; margin-left: auto; margin-right: auto; border: 2px solid;" 
+                                src="https://uid100.github.io/sfcollege-cis4083/images/ssms-connect.png" 
+                                alt="connect to server" width="459" height="304" /></p>
+                            <p>Enter the database name, admin name, and FQDN for the server you created in part 1. Set 
+                                the login to <em>SQL authentication</em> and login.</p>
+                        </li>
+                        <li>
+                            <p>Create a new script to run in your new database.</p>
+                            <p><img style="display: block; margin-left: auto; margin-right: auto;" 
+                                src="https://uid100.github.io/sfcollege-cis4083/images/ssms-new-query.png" 
+                                alt="create a script in your new database" width="594" height="466" /></p>
+                            <p>Create a table, add some data and run a query against your data. You can use the following 
+                                example or use your own.</p>
+                            <p>&nbsp;</p>
+                            <pre>USE [SimpleSqlDemoDb];
+        DROP TABLE IF EXISTS Automobiles;
+
+        CREATE TABLE Automobiles (
+        ID int IDENTITY(1,1),
+        VIN varchar(18),
+        ModelYear int,
+        Make varchar(64),
+        Model varchar(64),
+        Color varchar(12),
+        Lic varchar(12)
+        );
+
+        INSERT INTO dbo.Automobiles
+        (VIN, ModelYear, Make, Model, Color)
+        VALUES
+        ('JH4DA9458JS001234', 2012, 'Toyota', 'Corolla', 'Silver'),
+        ('1G1JD5SB1D4112345', 2003, 'Ford', 'F-150', 'White'),
+        ('KMHDN45D53U012345', 2003, 'Volkswagen', 'Golf', 'Gray'),
+        ('2T1BR32E84C123456', 2019, 'Honda', 'Civic', 'Blue'),
+        ('1J4FA69S94P012345', 2008, 'Toyota', 'Camry', 'Blue'),
+        ('3D7KS29C57G812345', 2012, 'Chevrolet', 'Silverado', 'White'),
+        ('WBANA53585B123456', 2003, 'Nissan', 'Sentra', 'Silver'),
+        ('JN1CA31A4XT012345', 2019, 'Ford', 'Mustang', 'Red'),
+        ('5FNRL38408B123456', 2017, 'Toyota', '4-Runner', 'White'),
+        ('WBAVB73517PA12345', 2021, 'Hyundai', 'Elantra', 'Gray');
+
+        SELECT 
+        ID, ModelYear, Color, Make, Model
+        FROM dbo.Automobiles
+        WHERE
+        ModelYear &gt; 2010 AND ModelYear &lt; 2020;
+        </pre>
+                            <p>&nbsp;</p>
+                        </li>
+                        <li>
+                            <p>The script creates a new table in your database, inserts data to it, and then queries 
+                                for results based on a filter criteria. Every time the script is called, it will delete 
+                                the table and re-create it. This is ok for development, but of course you wouldn't use 
+                                this in production.</p>
+                            <p>Run script and view the results.</p>
+                            <p style="background-color: yellow;"><strong>Lab Task 2:</strong> Copy and Paste 
+                                <em>the output result from this query</em> to your Word Document.</p>
+                        </li>
+                        <li>
+                            <p>After you've completed the step above, remember to delete any unneeded cloud resources 
+                                running on your service account. Database are servers. They are running all the time 
+                                whether anyone is using them or not. Delete them when they are not needed, or scale 
+                                them to a very limited capacity to manage costs.</p>
+                            <p>From the Azure Portal, open <strong>Resource groups</strong> and open the page that 
+                                contains the resource group you created. Mine is called RG_SQL_Demo. Notice that the 
+                                group contains both a database and a server. You can use the link at the top to 
+                                <strong>Delete resource group</strong> which will delete both and stop the billing 
+                                on those resources.</p>
+                        </li>
+                    </ol>
+                </div> <!-- .card-body -->
+            </div>
+            <div class="card" id="wrap-up">
+                <div class="card-header">Exercise 1 Wrap-Up</div>
+                <div class="card-body">
+                    <p>
+                        In this exercise, you created a remote cloud-based database that can be 
+                        used to store and endless amount of data to be used by any number of 
+                        applications. Commonly this database might be used by APIs and Web 
+                        applications also hosted on cloud servers. Remember that each new system 
+                        that wants to access this remote server needs to be added to the list of 
+                        firewall exceptions.</p>
+                    <p>
+                        SSMS is a very powerful, feature-rich SQL client. In addition to basic 
+                        queries, you can also create new databases on the server from scripts. 
+                        Remember that doing so from this tool may result in a new database with 
+                        all of the default configuration settings. Recall that this includes 
+                        Production-level scaling. Unless you are working on a local -not cloud 
+                        server, this is not recommended.</p>
+                </div> <!-- .card-body -->
+            </div> <!-- .card -->
+        </div> <!-- #ex1 -->
+    </div><!-- .card-body -->
+</div> <!-- #ex3 -->
