@@ -111,6 +111,7 @@
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module7.html" },
           "scaling": { "title": "Scaling Cloud Resources", "type": "content", "source": "/content/07-scaling.html" },
           "nosql": { "title": "SQL and NoSQL Databases", "type": "content", "source": "/content/07-nosql.html" },
+          "case-studies": { "title": "SQL and NoSQL Databases", "type": "content", "source": "/content/07-disc-case-studies.html" },
           "end": { "title": "End of Module 7: DBaaS and Scalability", "type": "content", "source": "/content/end-module.html"}
         },
         "lab": {
