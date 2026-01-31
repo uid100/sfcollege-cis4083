@@ -133,7 +133,13 @@
         "title": "Module 09 - N-Tier Architecture and Cloud Design Patterns",
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module9.html" },
+          "layers": { "title": "Layers, Tiers, and Services", "type": "content", "source": "/content/09-layers.html" },
           "end": { "title": "End of Module 9: N-Tier Architecture and Cloud Design Patterns", "type": "content", "source": "/content/end-module.html"}
+        },
+        "lab": {
+          "title": "Lab 09 n-Tier Solution Design",
+          "taskListUrl": "https://uid100.github.io/sfcollege-cis4083/content/ex04-n-tier/todo.json",
+          "fragmentsBase": "https://uid100.github.io/sfcollege-cis4083/content/ex04-n-tier/"
         }
       },
       "10-migration": {
@@ -147,6 +153,8 @@
         "title": "Module 11 - What's Next: The Future of Cloud Computing",
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module11.html" },
+          "security": { "title": "Cloud Computing: Security Concerns", "type": "content", "source": "/content/11-security.html" },
+          "ahead": { "title": "Module Overview", "type": "content", "source": "/content/11-ahead.html" },
           "end": { "title": "End of Module 11: The Future of Cloud Computing", "type": "content", "source": "/content/end-module.html"}
         }
       },
