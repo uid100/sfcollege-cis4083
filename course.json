@@ -109,7 +109,14 @@
         "title": "Module 07 - DBaaS and Scalability",
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module7.html" },
+          "scaling": { "title": "Scaling Cloud Resources", "type": "content", "source": "/content/scaling.html" },
+          "nosql": { "title": "SQL and NoSQL Databases", "type": "content", "source": "/content/nosql.html" },
           "end": { "title": "End of Module 7: DBaaS and Scalability", "type": "content", "source": "/content/end-module.html"}
+        },
+        "lab": {
+          "title": "Lab 07 - Deploying and Managing a Database in the Cloud",
+          "taskListUrl": "https://uid100.github.io/sfcollege-cis4083/content/ex03-dbaas/todo.json",
+          "fragmentsBase": "https://uid100.github.io/sfcollege-cis4083/content/ex03-dbaas/"
         }
       },
       "08-auth": {
