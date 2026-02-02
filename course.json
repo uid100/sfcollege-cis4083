@@ -142,6 +142,9 @@
         "title": "Module 10 - Cloud Migration and Management",
         "pages": {
           "overview": { "title": "Module Overview", "type": "content", "source": "/content/module10.html" },
+          "forecast": { "title": "Module Overview", "type": "content", "source": "/content/10-forecast.html" },
+          "migrating": { "title": "Module Overview", "type": "content", "source": "/content/10-migrating.html" },
+          "case-studies": { "title": "Module Overview", "type": "content", "source": "/content/10-case-studies.html" },
           "end": { "title": "End of Module 10: Cloud Migration and Management", "type": "content", "source": "/content/end-module.html"}
         }
       },
